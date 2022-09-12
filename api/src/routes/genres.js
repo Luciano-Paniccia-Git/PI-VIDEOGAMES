@@ -1,22 +1,26 @@
-const {default: axios} = require ('axios');
-const {Router} = require ('express');
-const {Genre} =  require('../db')
+const { default: axios } = require('axios');
+const { Router } = require('express');
+const {Genres} = require('../db.js')
 
 const router = Router();
 
-router.get('/',async (req, res, next) => {
-    try{
-        const repuesta = await axios.get(`https://api.rawg.io/api/genres?key=a078be82eb41413583df3fd6e0b9336c`);
-        const genreApi = await repuesta.data.results.map(g => g.name);
+router.get('/', async (req, res, next) => {
+    try {
+        const respuesta = await axios.get(`https://api.rawg.io/api/genres?key=a078be82eb41413583df3fd6e0b9336c`)
+        const genresApi = await respuesta.data.results.map(g => g.name)
+        //console.log('estos son los generos: ', genresApi)
 
-        genreApi.map(e => Genre.findOrCreate({
-            where: {name: e}
+        genresApi.map(e => Genres.findOrCreate({ //lo uso para guardar los generos que me traje de la API en la base de datos
+            where: {name: e} //
         }))
-        const allGenre = await Genre.findAll()
-        res.json(allGenre)
-    }catch (e){
+
+        const allGenres = await Genres.findAll() //me traigo todos los generos que guarde en mi db
+        res.json(allGenres)
+
+    }catch(e) {
         next(e)
     }
-});
+
+})
 
 module.exports = router;
