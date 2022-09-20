@@ -26,5 +26,19 @@ router.get('/', async (req, res, next) => {
         return
     }
     })
+router.get('/platforms', async (req, res, next) => {
+try {
+    const all = await infoApi();
+    const allPlatforms = []
+    all.map(g => g.platforms.map(p => {
+        if(!allPlatforms.includes(p)) {
+            allPlatforms.push(p)
+        }
+    }))
+    allPlatforms.length ? res.status(200).json(allPlatforms) : res.status(404).send('Error')
+}catch(e) {
+    next(e)
+}
+})
 
 module.exports = router;

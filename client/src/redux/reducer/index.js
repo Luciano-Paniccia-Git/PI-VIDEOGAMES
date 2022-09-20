@@ -8,37 +8,37 @@ import {
     FILTER_BY_SOURCE,
     FILTER_BY_GENRES,
     GET_PLATFORMS
-} from '../actions';
+} from '../actions'
 
 const initialState = {
     allVideogames : [],
     videogames : [],
-    videogame : [],
-    genres : [],
-    platforms : [],
+    videogame: [],
+    genres: [],
+    platforms: []
 }
 
-function rootReducer (state = initialState, action) {
+function rootReducer(state = initialState, action) {
     switch (action.type) {
-        case GET_ALL_VIDEOGAMES:
+        case GET_ALL_VIDEOGAMES: //para mi home
             return {
                 ...state,
                 allVideogames: action.payload,
-                videogames: action.payload
+                videogames: action.payload //de reserva
             };
-        case GET_NAMES:
+        case GET_NAMES: //para mi searchbar
             return {
                 ...state,
                 allVideogames: action.payload
             };
-        case GET_VIDEOGAME:
+        case GET_VIDEOGAME: //para mi ruta de detalle
             return {
                 ...state,
                 videogame: action.payload
-            }
-        case GET_BY_GENRES: 
-        return {
-            ...state,
+            };
+        case GET_BY_GENRES:
+            return {
+                ...state,
                 genres: action.payload
             };
         case CREATE_VIDEOGAME:
