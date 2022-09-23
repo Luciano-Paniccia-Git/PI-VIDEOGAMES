@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNames } from '../../redux/actions'
 import s from '../SearchBar/SearchBar.module.css';
-
+import lupa from "../multimedia/lupa.png"
 
 export default function SearchBar () {
     const [state, setState] = useState('')
@@ -21,6 +21,7 @@ export default function SearchBar () {
         }else{
             alert("No ingreso nada en la busqueda")
         }
+      
     }
     return (
         <div className={s.box}>
@@ -35,7 +36,7 @@ export default function SearchBar () {
                     placeholder="Buscar Videojuego"
                     onChange={e => handleChange(e)}
                     />
-                    <button type="submit" className={s.btn}/>
+                    <button type="submit" className={s.btn}><img src={lupa} alt='lupa'/></button>
                 </div>
             </form>
         </div>

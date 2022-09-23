@@ -211,7 +211,7 @@ function validate (input) {
   
             <div className={s.grupo}>
               <select className={s.select_create} id="genres" defaultValue="" onChange={(e) => handleGenres(e)}>
-                <option className={s.option_create} value='' disabled hidden>Elija los géneros...</option>
+                <option className={s.option_create} value="" disabled hidden>Elija los géneros...</option>
                 {generos.map((g) => {
                   return (
                     <option className={s.option_create} key={g.id} value={g.name}>{g.name}</option>

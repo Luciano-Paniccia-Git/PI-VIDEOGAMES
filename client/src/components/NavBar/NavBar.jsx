@@ -5,6 +5,7 @@ import s from '../NavBar/NavBar.module.css'
 import { getAllVideogames } from '../../redux/actions'
 import { useDispatch } from "react-redux";
 
+
 export default function NavBar () {
     const dispatch = useDispatch ()
 
@@ -18,7 +19,7 @@ export default function NavBar () {
                 <SearchBar />
             </div>
             <div className={s.search}>
-                <button className={s.btn}onClick={e => handleRefresh(e)}>Refresh</button>
+                <button className={s.btn}onClick={e => handleRefresh(e)}>Actualizar</button>
                 <span className={s.opcion}><NavLink to={'/create'} className={s.to}>Crear Videojuego</NavLink></span>
             </div>
         </nav>

@@ -19,8 +19,8 @@ return (
             <option value="">Ordenar por...</option>
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
-            <option value="RatingAsc">Maximo Rating</option>
-            <option value="RatingDesc">Minimo Rating</option>
+            <option value="RatingAsc">Minimo Rating</option>
+            <option value="RatingDesc">Maximo Rating</option>
         </select>
         
         <select id="genre" onChange={e => handleFilter(e)}>
