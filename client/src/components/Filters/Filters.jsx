@@ -23,7 +23,7 @@ return (
             <option value="RatingDesc">Maximo Rating</option>
         </select>
         
-        <select id="genre" onChange={e => handleFilter(e)}>
+        <select id="genres" onChange={e => handleFilter(e)}>
                         <option value=''>Generos</option>
                         {generos && generos.map(g => {
                             return (
