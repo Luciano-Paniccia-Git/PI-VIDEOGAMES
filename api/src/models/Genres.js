@@ -4,7 +4,7 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
 	//defino el modelo de género
 	sequelize.define(
-		"Genres", {
+		"genres", {
 		id: {
 			type: DataTypes.UUID,
 			defaultValue: DataTypes.UUIDV4,
