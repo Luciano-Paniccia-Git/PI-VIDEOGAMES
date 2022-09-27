@@ -13,7 +13,7 @@ export const GET_PLATFORMS = 'GET_PLATFORMS'
 export const getAllVideogames = () => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get("https://pi-videogames1.herokuapp.com/videogames");
+      const { data } = await axios.get("http://localhost:3001/videogames");
       return dispatch({
         type: "GET_ALL_VIDEOGAMES",
         payload: data,
@@ -28,7 +28,7 @@ export const getNames = (name) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.get(
-        `https://pi-videogames1.herokuapp.com/videogames?name=${name}`
+        `http://localhost:3001/videogames?name=${name}`
       );
       return dispatch({
         type: "GET_NAMES",
@@ -47,7 +47,7 @@ export const getNames = (name) => {
 export const getVideogame = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`https://pi-videogames1.herokuapp.com/videogame/${id}`);
+      const { data } = await axios.get(`http://localhost:3001/videogame/${id}`);
       return dispatch({
         type: "GET_VIDEOGAME",
         payload: data,
@@ -61,7 +61,7 @@ export const getVideogame = (id) => {
 export const getByGenres = () => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`https://pi-videogames1.herokuapp.com/genres`);
+      const { data } = await axios.get(`http://localhost:3001/genres`);
       return dispatch({
         type: "GET_BY_GENRES",
         payload: data,
@@ -76,7 +76,7 @@ export const createVideogame = (videogame) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.post(
-        `https://pi-videogames1.herokuapp.com/videogame`,
+        `http://localhost:3001/videogame`,
         videogame
       );
       return dispatch({
@@ -112,7 +112,7 @@ export const filterByGenres = (payload) => {
 
 export const getPlatforms = () => {
   return async (dispatch) => {
-      const url = await axios.get('https://pi-videogames1.herokuapp.com/videogames/platforms')
+      const url = await axios.get('http://localhost:3001/videogames/platforms')
       //console.log(url)
       return dispatch({
           type: 'GET_PLATFORMS',
