@@ -21,6 +21,7 @@ return (
             <option value="Z-A">Z-A</option>
             <option value="RatingAsc">Minimo Rating</option>
             <option value="RatingDesc">Maximo Rating</option>
+            
         </select>
         
         <select id="genres" onChange={e => handleFilter(e)}>
@@ -37,8 +38,9 @@ return (
                         <option value="api">API</option>
                         <option value="created">Created</option>
                     </select>
-
+ 
     </div>
+
 )
 
 }
